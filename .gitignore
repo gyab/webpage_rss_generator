@@ -2,3 +2,5 @@
 .json
 .vscode
 .vscode/
+.DS_Store
+.env_indie
