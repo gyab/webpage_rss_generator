@@ -48,10 +48,6 @@ def create_feed():
     etree.dump(root)
 
 
-def add(x: int, y: int) -> int:
-    return x + y
-
-
 def check_for_update(event, context):
     r = requests.head(URL)
     url_time = r.headers['last-modified']
