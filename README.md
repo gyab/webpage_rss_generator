@@ -1,4 +1,4 @@
-# Webpage_rss_generator 
+# webpage_rss_generator 
 
 Single Python file to generate and update a RSS file based on a certain webpage. The script is uploaded to GCP as a Cloud Function and then using Cloud Scheduler is run for example every day to get the latest content.
 
