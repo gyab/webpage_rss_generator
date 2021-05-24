@@ -6,4 +6,4 @@ To upload the file to GCP, you will need to [generate a key](https://cloud.googl
 
 The only left thing to do is to change the values in the .env file that represents the website that you want to create a RSS feed from.
 
-The main.py file contains two main functions, **create_feed** and **check_for_update**. **create_feed** initializes a empty RSS file and **check_for_update** will update the file if new content has been uploaded.
+The **main.py** file contains two main functions, **create_feed** and **check_for_update**, the first initializes a empty RSS file and the second will update the file if new content has been uploaded.
