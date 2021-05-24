@@ -54,7 +54,7 @@ def check_for_update(event, context):
     if datetime.strptime(url_time, "%a, %d %b %Y %I:%M:%S %Z") > datetime.now() - timedelta(days=1):
         get_update()
     else:
-        print("no update to fetch today")
+        print(f'no update to fetch today {RSS_FILE}')
 
 
 def parse_page(url):
