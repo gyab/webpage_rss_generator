@@ -52,9 +52,12 @@ def create_feed():
 def check_for_update(event, context):
     r = requests.head(URL)
     url_time = r.headers['last-modified']
-    if datetime.strptime(url_time, "%a, %d %b %Y %I:%M:%S %Z") > datetime.now() - timedelta(days=1):
+    if datetime.strptime(url_time, "%a, %d %b %Y %I:%M:%S %Z") > datetime.now() - timedelta(days=2):
+        print(f'new update to fetch today {RSS_FILE}')
         get_update()
     else:
+        print(datetime.strptime(url_time, "%a, %d %b %Y %I:%M:%S %Z"))
+        print(datetime.now() - timedelta(days=1))
         print(f'no update to fetch today {RSS_FILE}')
 
 
