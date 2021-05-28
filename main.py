@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime, timedelta
 import os
+import urllib
 
 from dotenv import load_dotenv
 from lxml import etree
@@ -76,9 +77,11 @@ def get_update():
         add_item_feed(links[0].get_text(), links[0]['href'])
 
 
-def get_xml_root(file=RSS_FILE):
-    tree = etree.parse(file)
-    return tree.getroot()
+def get_xml_root(file=URL_RSS_FILE):
+    with urllib.request.urlopen(file) as url:
+        xml_str = url.read()
+        tree = etree.HTML(xml_str)
+    return tree
 
 
 def add_item_feed(tt, lk):
